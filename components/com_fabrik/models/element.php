@@ -1743,8 +1743,8 @@ class PlgFabrik_Element extends FabrikPlugin
 		}
 
 		$tip = trim(JText::_($tip));
-		$tip = JText::_($tip);
-		$tip = htmlspecialchars($tip, ENT_QUOTES);
+		//$tip = JText::_($tip);
+		//$tip = htmlspecialchars($tip, ENT_QUOTES);
 
 		return $tip;
 	}
@@ -2124,7 +2124,7 @@ class PlgFabrik_Element extends FabrikPlugin
 
 		if ($tip !== '')
 		{
-			$tip = '<div class="fabrikInlineTip">' . FabrikHelperHTML::image('questionmark.png', 'form', $tmpl) . $tip . '</div>';
+			$tip = '<div class="fabrikInlineTip">' . FabrikHelperHTML::image('questionmark.png', 'form', $tmpl) .'<span class="tip">'.$tip . '</span></div>';
 		}
 
 		switch ($model->getParams()->get('tiplocation'))
